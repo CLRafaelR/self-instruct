@@ -7,7 +7,7 @@ license = "Apache-2.0"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">=3.11.7"
+python = ">=3.11.7, <4.0"
 torch = {version = "^2.3.0+cu121", source = "torch_cu121"}
 torchvision = {version = "^0.18.0+cu121", source = "torch_cu121"}
 torchaudio = {version = "^2.3.0+cu121", source = "torch_cu121"}
@@ -26,6 +26,11 @@ onnxruntime-genai-cuda = {version = "^0.2.0rc4", allow-prereleases = true, sourc
 ort-nightly = {version = "^1.19.0.dev20240502004", source = "ort_nightly"}
 onnxruntime-gpu = {version = "^1.17.1", allow-prereleases = true}
 optimum = {extras = ["onnxruntime-gpu"], version = "^1.19.1", allow-prereleases = true}
+rouge-score = "^0.1.2"
+tqdm = "^4.66.4"
+benepar = "^0.2.0"
+spacy = "^3.7.4"
+plotly = "^5.22.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.4.2"
