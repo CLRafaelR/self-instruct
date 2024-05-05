@@ -1,0 +1,66 @@
+[tool.poetry]
+name = "self-instruct"
+version = "0.1.0"
+description = ""
+authors = ["Masataka Ogawa"]
+license = "Apache-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.11.7"
+torch = {version = "^2.3.0+cu121", source = "torch_cu121"}
+torchvision = {version = "^0.18.0+cu121", source = "torch_cu121"}
+torchaudio = {version = "^2.3.0+cu121", source = "torch_cu121"}
+accelerate = "^0.29.3"
+numpy = "^1.26.4"
+onnx = "^1.16.0"
+ort-nightly-gpu = {version = "^1.17.0.dev20240118002", source = "ort_nightly_gpu"}
+joblib = "^1.4.0"
+bitsandbytes = "^0.43.1"
+llama-cpp-python = {version = "^0.2.68", source = "llama_cpp_python_cu124"}
+packaging = "^24.0"
+ninja = "^1.11.1.1"
+wheel = "^0.43.0"
+setuptools = "^69.5.1"
+onnxruntime-genai-cuda = {version = "^0.2.0rc4", allow-prereleases = true, source = "onnxruntime_genai_cuda"}
+ort-nightly = {version = "^1.19.0.dev20240502004", source = "ort_nightly"}
+onnxruntime-gpu = {version = "^1.17.1", allow-prereleases = true}
+optimum = {extras = ["onnxruntime-gpu"], version = "^1.19.1", allow-prereleases = true}
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.4.2"
+ipykernel = "^6.29.4"
+
+
+[[tool.poetry.source]]
+name = "torch_cu121"
+url = "https://download.pytorch.org/whl/cu121"
+priority = "explicit"
+
+
+[[tool.poetry.source]]
+name = "onnxruntime_genai_cuda"
+url = "https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-genai/pypi/simple/"
+priority = "explicit"
+
+
+[[tool.poetry.source]]
+name = "ort_nightly_gpu"
+url = "https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/ort-cuda-12-nightly/pypi/simple/"
+priority = "explicit"
+
+
+[[tool.poetry.source]]
+name = "llama_cpp_python_cu124"
+url = "https://abetlen.github.io/llama-cpp-python/whl/cu124"
+priority = "primary"
+
+
+[[tool.poetry.source]]
+name = "ort_nightly"
+url = "https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/ORT-Nightly/pypi/simple/"
+priority = "explicit"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
